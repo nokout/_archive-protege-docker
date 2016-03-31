@@ -1,0 +1,15 @@
+version: '2'
+services:
+  mymongo:
+    build: mongo/.
+    volumes:
+      - ./mongo/datadir:/data/db
+    expose:
+      - 27017
+  webserver:
+    build: webserver/.
+    ports:
+      - "80:80"
+      - "8080:8080"
+    links:
+      - mymongo
