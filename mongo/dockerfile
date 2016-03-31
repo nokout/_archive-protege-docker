@@ -1,3 +1,5 @@
 FROM mongo
-# add command option: -v somewhere:/data to set the volume location on host
+# add command option: -v somewhere:/data/db to set the volume location on host
 VOLUME /data/db
+#appears you need to run an absolute directory to map the volume correctly
+#docker run -d -v /home/nokout/projects/protege/mongo/datadir:/data/db --name mymongo mymongo
