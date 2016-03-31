@@ -1,7 +1,6 @@
 FROM tomcat
 MAINTAINER nokout
 
-
 COPY tomcat-users.xml /usr/local/tomcat/conf/
 COPY settings.xml /usr/local/tomcat/conf/
 
@@ -11,3 +10,6 @@ COPY webprotege.properties /usr/local/tomcat/webapps/
 RUN mkdir -p /data/webprotege
 
 CMD ["catalina.sh", "run"]
+
+
+# After deploy: docker exec protegedocker_webserver_1 cp /usr/local/tomcat/webapps/webprotege.properties /usr/local/tomcat/webapps/webprotege/webprotege.properties
