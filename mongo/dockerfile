@@ -1,0 +1,3 @@
+FROM mongo
+# add command option: -v somewhere:/data to set the volume location on host
+VOLUME /data/db

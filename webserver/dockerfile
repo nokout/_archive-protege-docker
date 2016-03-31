@@ -1,0 +1,15 @@
+FROM tomcat
+MAINTAINER nokout
+
+
+COPY tomcat-users.xml /usr/local/tomcat/conf/
+COPY settings.xml /usr/local/tomcat/conf/
+
+COPY webprotege.war /usr/local/tomcat/webapps/
+
+#COPY webprotege.properties /usr/local/tomcat/webapps/webprotege/
+COPY webprotege.properties /usr/local/tomcat/webapps/
+RUN mkdir -p /data/webprotege
+
+CMD cp
+CMD ["catalina.sh", "run"]
